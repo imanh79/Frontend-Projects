@@ -248,6 +248,7 @@ a {
     border: none;
     box-shadow: rgb(0 0 0 / 13%) 0px 11px 30px -12px;
     margin-top: 0.5rem;
+    -moz-appearance: textfield;
 }
 
 .wrapper__input2 {
