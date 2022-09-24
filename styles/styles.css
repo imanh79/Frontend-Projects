@@ -1,0 +1,152 @@
+@import "reset.css";
+@import "grid.css";
+@import "font.css";
+
+/*
+
+---- main ----
+
+*/
+
+html {
+    box-sizing: border-box;
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    padding: 7rem 0;
+}
+
+.wrapper {}
+
+.wpimg {
+    flex-basis: 40%;
+}
+
+.wrapper__img {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapperall {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    display: flex;
+}
+
+.wrapper__all {
+    flex-basis: 60%;
+    text-align: center;
+    /* margin: 32% 0; */
+}
+
+.wrapper__title {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14rem;
+    margin-top: 4rem;
+}
+
+.wrapper__title-top {
+    margin-right: 5rem;
+    font-size: 2rem;
+    color: #707070;
+    font-family: "avinerbook";
+}
+
+.wrapper__inside {
+    font-family: "avinerblack";
+    font-weight: 700;
+    color: #707070;
+    font-size: 4.3rem;
+}
+
+.wrapper__cap {
+    /* padding: 0 15rem;
+    padding-left: 19rem; */
+    /* max-width: 60rem; */
+    margin-right: 19rem;
+    margin-left: 19rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    color: #707070;
+    text-align: left;
+    font-family: "avinerbook";
+}
+
+.wrapper__input {
+    width: 35.5rem;
+    font-family: "avinerbook";
+    outline: none;
+    padding: 2rem 7rem 2rem 2rem;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 11px 30px -12px;
+}
+
+.spaninp::after {
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 5.6rem;
+    background-color: #ff5a87;
+}
+
+.wrapper__input2 {
+    width: 35.5rem;
+    font-family: "avinerbook";
+    outline: none;
+    padding: 2rem 7rem 2rem 2rem;
+    margin-top: 0.5rem;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: rgba(149, 157, 165, 0);
+}
+
+.wrapper__end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25rem;
+    margin-top: 4rem;
+}
+
+.wrapper__title-end {
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: #707070;
+    font-weight: 700;
+    margin-right: 0.1rem;
+    font-family: "avinerblack";
+}
+
+.wrapper__span {}
+
+.wrapper__question {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 12.5rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+}
+
+.wrapper__question-cap {
+    font-family: "avinerbook";
+    font-size: 1.6rem;
+    color: #707070;
+}

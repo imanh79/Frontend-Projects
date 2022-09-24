@@ -1,0 +1,116 @@
+@media screen and (max-width: 1400px) {
+    .wrapper__cap {
+        margin-right: 10rem;
+        margin-left: 12rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .wrapper__inside {
+        font-size: 3.6rem;
+    }
+    .wrapper__question {
+        margin-top: 12.5rem;
+        margin-left: 5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .signup {
+        margin-left: -16.3rem;
+    }
+    .wrapper__input-first {
+        width: 25.5rem;
+    }
+    .wrapper__input-last {
+        margin-top: 0.5rem;
+        width: 25.5rem;
+    }
+    .wrapper__inside {
+        font-size: 2.6rem;
+    }
+    .wrapper__question {
+        margin-top: 12.5rem;
+        margin-left: 5rem;
+        margin-bottom: 5rem;
+    }
+    .wpimg {
+        flex-basis: 50%;
+    }
+    .wrapper__all {
+        flex-basis: 50%;
+    }
+    .wrapper__cap {
+        font-size: 1.4rem;
+        margin-right: 3rem;
+        margin-left: 5rem;
+    }
+    .wrapper__end {
+        margin-left: 15rem;
+    }
+    .wrapper__input {
+        width: 25.5rem
+    }
+    .wrapper__input2,
+    .wrapper__input-num {
+        width: 25.5rem
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .signup {
+        margin-left: -13.3rem;
+    }
+    .wrapper__input-first {
+        width: 22.5rem;
+    }
+    .wrapper__input-last {
+        width: 22.5rem;
+    }
+    .wrapper__title-top {
+        margin-right: 2rem;
+    }
+    .wrapper__question {
+        margin-left: 3rem;
+    }
+    .wrapper__title-end {
+        font-size: 1.5rem
+    }
+    .wrapper__inside {
+        font-size: 2rem;
+    }
+    .wrapper__input {
+        width: 22.5rem
+    }
+    .wrapper__input2,
+    .wrapper__input-num {
+        width: 22.5rem
+    }
+    .wrapper__end {
+        margin-left: 12rem;
+    }
+    .wrapper__question {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wpimg {
+        display: none;
+    }
+    .wrapper__mobile {
+        display: block;
+    }
+    .wrapper__mobile>* {
+        color: #707070;
+    }
+    .wrapperall {
+        display: unset;
+    }
+    .wrapper__cap {
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
