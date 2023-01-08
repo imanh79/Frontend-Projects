@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="icon" href="./image/weather.png">
+    <title>weather-app</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="background-real">
+            <div class="background">
+                <!-- <img src="./image/5137894.jpg" alt=""> -->
+                <div class="box-weather">
+                    <div class="box-outside">
+                        <form class="box-outside-search">
+                            <label class="searchbox"></label>
+                            <input type="text" class="input-search" placeholder="Enter your country" spellcheck="false">
+                            <button class="butt">search</button>
+
+                        </form>
+                        <div class="span-res">
+
+                            <!-- <iframe src="https://giphy.com/embed/xkGkrAIbJqAtKlsZI5" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+
+                            <!-- <h3 class="box-outside__country">country</h3> -->
+                            <div class="span-time">
+                                <span class="box-outside__date-span"></span><br>
+                            </div>
+                            <div class="text-hide">
+                                <h3 class="text-error">No results found.</h3>
+                            </div>
+                            <div class="span-all" id="lock">
+                                <div class="span-box">
+                                    <span class="country-span"></span><br>
+                                    <!-- <h3 class="box-outside__weather">weather</h3> -->
+                                    <span class="box-outside__weather-span"></span><br>
+                                    <!-- <h3 class="box-outside__windspeed">windspeed</h3> -->
+                                    <span class="box-outside__windspeed-span"></span><br>
+                                    <!-- <h5 class="box-outside__temperature">temperature</h5> -->
+                                    <span class="box-outside__temperature-span"></span><span></span><br>
+                                    <!-- <h5 class="box-outside__humidity">humidity</h5> -->
+                                    <span class="box-outside__humidity-span"></span><br></div>
+                                <div class="span-svg">
+                                    <i class="svgweather" style="font-size: 2.5rem;"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="creator">
+                <span>Create by Iman</span>
+            </div>
+        </div>
+
+        <script src="./js/app.js"></script>
+</body>
+
+</html>
