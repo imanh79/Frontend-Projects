@@ -1,7 +1,3 @@
-window.addEventListener("load", (e) => {
-    document.getElementById("loader").style.display = "none";
-    console.log("loaded");
-})
 const Tracks = [{
     name: "Moral of the Story",
     artist: "Ashe",
@@ -66,20 +62,22 @@ const myAudio = new Audio(),
 let intervalId = null,
     duration;
 let count = 0
-document.getElementById("loader").style.display = "block";
+document.querySelector(".parent-loader").style.display = "block";
+window.addEventListener("load", (e) => {
+    document.querySelector(".parent-loader").style.display = "none";
+    console.log("loaded");
+    for (let i = 0; i < Tracks.length; i++) {
+        myAudio.src = Tracks[i].source;
+        myAudio.load();
+    }
+})
 
 // Code to load content goes here
 // setTimeout(function() {
 //     document.querySelector('.loading-container').style.display = 'none';
 //     // Code to display content goes here
 // }, 3000); // Set timeout to simulate loading time
-myAudio.onloadedmetadata = function() {
-    var totalAudioTime = myAudio.duration;
-    var formattedTime = formatTime(totalAudioTime);
-    // مقدار کل زمان صدا به فرمت ساعتی (hh:mm:ss)
-    timermusic.innerHTML = formattedTime
 
-}
 download.addEventListener("click", () => {
     const downloadButton = document.querySelector(".download");
     downloadButton.style.color = "#068d20";
@@ -284,4 +282,11 @@ function formatTime(seconds) {
     } else {
         return minutes + ':' + remainingSeconds;
     }
+}
+myAudio.onloadedmetadata = function() {
+    var totalAudioTime = myAudio.duration;
+    var formattedTime = formatTime(totalAudioTime);
+    // مقدار کل زمان صدا به فرمت ساعتی (hh:mm:ss)
+    timermusic.innerHTML = formattedTime
+
 }
