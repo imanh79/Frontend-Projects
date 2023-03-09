@@ -2,47 +2,47 @@ const Tracks = [{
     name: "Moral of the Story",
     artist: "Ashe",
     cover: "photo_2023-03-07_09-54-12.jpg",
-    source: "Ashe-Moral-of-the-Story-320.mp3",
+    source: "https://ts2.tarafdari.com/contents/user379001/content-sound/ashe_-_moral_of_the_story.mp3",
     link: "http://81.4.110.89/Ashe-Moral-of-the-Story-320.mp3",
     favorited: false
 }, {
     name: "Dream",
     artist: "Imagine Dragons",
     cover: "dream-imagine-drogons.jpg",
-    source: "Imagine-Dragons-Dream-320.mp3",
+    source: "https://dl.musicdel.ir/Music/1401/01/imagine_dragons_dream.mp3",
     link: "http://81.4.110.89/Imagine-Dragons-Dream-320.mp3",
     favorited: false
 }, {
     name: "Calm Down",
     artist: "Selena Gomez",
     cover: "Calm-Down\ selena\ gomes.jpg",
-    source: "Rema-Calm-Down-ft-Selena-Gomez-(HiphopKit.com).mp3",
+    source: "https://ts12.tarafdari.com/contents/user760078/content-sound/rema_selena_gomez_-_calm_down320.mp3",
     link: "http://81.4.110.89/Rema-Selena-Gomez-Calm-Down-320.mp3",
     favorited: false
 }, {
     name: "Unholy",
     artist: "Sam Smith Kim Petras",
     cover: "photo_2023-03-07_09-59-16.jpg",
-    source: "Sam-Smith-Kim-Petras-Unholy-320.mp3",
+    source: "https://ts12.tarafdari.com/contents/user300048/content-sound/sam_smith_unholy_ft_kim_petras.mp3",
     link: "http://81.4.110.89/Sam-Smith-Kim-Petras-Unholy-320.mp3",
     favorited: false
 }, {
     name: "Heart Wants What It Wants",
     artist: "Selena Gomez",
     cover: "photo_2016-06-07_23-02-12.jpg",
-    source: "Selena-Gomez-The-Heart-Wants-What-It-Wants-320.mp3",
+    source: "https://ts1.tarafdari.com/contents/user196737/content-sound/01_the_heart_wants_what_it_wants.mp3",
     link: "http://81.4.110.89/Selena-Gomez-The-Heart-Wants-What-It-Wants-320.mp3",
     favorited: false
 }, {
     name: "Saved My Life",
     artist: "Sia",
     cover: "photo_2021-02-12_11-03-21.jpg",
-    source: "Sia-Saved-My-Life-320.mp3",
+    source: "https://ts5.tarafdari.com/contents/user628719/content-sound/sia_-_saved_my_life.mp3",
     link: "http://81.4.110.89/Sia-Saved-My-Life-320.mp3",
     favorited: false
 }]
 console.log(Tracks[0]);
-const myAudio = new Audio("musics/Rema-Calm-Down-ft-Selena-Gomez-(HiphopKit.com).mp3"),
+const myAudio = new Audio("https://dl.pinkmusic.ir/uploads/2023/01/Dj-Goja-x-Magic-Phase-Calm-Down-Rema-Cover-.mp3"),
     play = document.querySelector("#playpause"),
     timer = document.querySelector(".time-music"),
     timermusic = document.querySelector(".time-music--org"),
@@ -75,9 +75,16 @@ timer.addEventListener("click", function(event) {
 });
 console.log(next);
 console.log(backgimage.style.backgroundImage);
-
+myAudio.addEventListener('canplaythrough', () => {
+    duration = myAudio.duration;
+});
 window.addEventListener("DOMContentLoaded", function() {
-
+        for (let i = 0; i < Tracks.length; i++) {
+            const track = Tracks[i];
+            const source = track.source;
+            const trackAudio = new Audio(source);
+            myAudio.appendChild(trackAudio);
+        }
         play.setAttribute("class", "fa-solid fa-play")
             // دریافت اطلاعات از localStorage
         const savedData = JSON.parse(localStorage.getItem('musicData'));
@@ -94,7 +101,7 @@ window.addEventListener("DOMContentLoaded", function() {
             soundname.innerHTML = item.name;
             artist.innerHTML = item.artist;
             backgimage.style.backgroundImage = "url('./images/" + item.cover + "')";
-            myAudio.src = "musics/" + item.source;
+            myAudio.src = item.source;
         }
         const likeStatus = localStorage.getItem("likeStatus");
         if (likeStatus !== null) {
@@ -105,9 +112,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     })
     // MIN:SEC زمان مشخص شده توسط حرکت موس
-myAudio.addEventListener('canplaythrough', () => {
-    duration = myAudio.duration;
-});
+
 
 // ذخیره آهنگ در local storage
 myAudio.addEventListener('timeupdate', function() {
@@ -124,7 +129,7 @@ function showmusic(counter) {
     soundname.innerHTML = item.name
     artist.innerHTML = item.artist
     backgimage.style.backgroundImage = "url('./images/" + item.cover + "')";
-    myAudio.src = "musics/" + item.source
+    myAudio.src = item.source
     download.setAttribute("href", item.link)
     myAudio.currentTime = 0;
     myAudio.pause();
