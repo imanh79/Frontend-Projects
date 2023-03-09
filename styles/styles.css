@@ -1,0 +1,523 @@
+@import "reset.css";
+@import "grid.css";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+/*
+
+---- main ----
+
+*/
+
+html {
+    box-sizing: border-box;
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    background: #dfe7ef;
+}
+
+a {
+    text-decoration: none;
+}
+
+.all {
+    box-shadow: 0px 15px 35px -5px rgb(50 88 130 / 32%);
+    margin: 8rem auto 0 auto;
+    /* width: 42rem; */
+    height: 52.5rem;
+    background-color: #eef3f7;
+    border-radius: 1rem;
+    font-family: "Mulish";
+    font-weight: 600;
+}
+
+.all-pad {
+    padding: 6rem 2rem;
+    padding-top: 2rem;
+}
+
+.nav {}
+
+.nav__list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav__list-item {}
+
+.nav__list-item--active {
+    margin: 0 -12rem;
+}
+
+.image-side {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 37rem;
+    /* margin: 5rem auto 1rem auto; */
+    /* width: 28rem; */
+    background-image: url("../images/Calm-Down\ selena\ gomes.jpg");
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.singer-music {
+    text-align: center;
+}
+
+.singer {
+    font-family: "Mulish", serif;
+    font-weight: 700;
+    font-style: italic;
+    color: #71829e;
+    margin-bottom: 0.4rem;
+    margin-top: 0.7rem;
+    font-size: small;
+}
+
+.music-name {
+    color: #65748d;
+    font-family: "bitter";
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 13px;
+}
+
+.range_parent {
+    margin: 0 auto;
+}
+
+.range-music {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    color: #71829e;
+    position: relative;
+    background: #d0d8e6;
+    border-radius: 0.6rem;
+    margin-top: 14px;
+    margin: 0 2.5rem;
+}
+
+#seek-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #2c3e50;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+
+.range-music--progress {
+    width: 0%;
+    background: #8797b1bd;
+    height: 0.8rem;
+    border-radius: 0.6rem;
+}
+
+.button-music {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-music--org {
+    position: absolute;
+    left: 102%;
+    bottom: -56%;
+}
+
+.time-music {
+    position: absolute;
+    left: -10%;
+    bottom: -67%;
+}
+
+.previous {
+    background: transparent;
+    border: none;
+    stroke-width: 0;
+    font-size: 2rem;
+    color: #acb8cc;
+    outline: none;
+}
+
+.play {
+    background: transparent;
+    border: none;
+    stroke-width: 0;
+    font-size: 2rem;
+    color: #acb8cc;
+    outline: none;
+}
+
+.next {
+    background: transparent;
+    border: none;
+    stroke-width: 0;
+    font-size: 2rem;
+    color: #acb8cc;
+    outline: none;
+}
+
+.parent-btn {
+    display: flex;
+}
+
+.like {
+    background: transparent;
+    border: none;
+    stroke-width: 0;
+    font-size: 2rem;
+    color: #acb8cc;
+    outline: none;
+    transition: color 1s ease-in-out;
+}
+
+.download {
+    background: transparent;
+    border: none;
+    stroke-width: 0;
+    font-size: 2rem;
+    color: #acb8cc;
+    outline: none;
+    transition: color 1s ease-in-out;
+}
+
+.previous {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #acb8cc;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: 100ms;
+}
+
+.previous::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background-color: black;
+    transform: scaleY(0%) scaleX(0%);
+    border-radius: 1rem;
+    z-index: 1;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.previous:hover {
+    color: #532ab9;
+    transition: 100ms;
+}
+
+.previous:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 1px 15px 25px -10px rgba(0, 0, 0, .25);
+    transform-origin: center;
+    transform: scaleY(100%) scaleX(100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #acb8cc;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: 100ms;
+}
+
+.play::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background-color: black;
+    transform: scaleY(0%) scaleX(0%);
+    border-radius: 1rem;
+    z-index: 1;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play:hover {
+    color: #532ab9;
+    transition: 100ms;
+}
+
+.play:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 1px 15px 25px -10px rgba(0, 0, 0, .25);
+    transform-origin: center;
+    transform: scaleY(100%) scaleX(100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* ///// */
+
+.next {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #acb8cc;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: 100ms;
+}
+
+.next::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background-color: black;
+    transform: scaleY(0%) scaleX(0%);
+    border-radius: 1rem;
+    z-index: 1;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.next:hover {
+    color: #532ab9;
+    transition: 100ms;
+}
+
+.next:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 1px 15px 25px -10px rgba(0, 0, 0, .25);
+    transform-origin: center;
+    transform: scaleY(100%) scaleX(100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* /////// /*/
+
+.like {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #acb8cc;
+    z-index: 2;
+    border-radius: 1rem;
+    transition: 100ms;
+}
+
+.like::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background-color: black;
+    transform: scaleY(0%) scaleX(0%);
+    border-radius: 1rem;
+    z-index: 1;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.like:hover {
+    color: #532ab9;
+    transition: 100ms;
+}
+
+.like:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 1px 15px 25px -10px rgba(0, 0, 0, .25);
+    transform-origin: center;
+    transform: scaleY(100%) scaleX(100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/* /////////// */
+
+.download {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #acb8cc;
+    z-index: 2;
+    border-radius: 1rem;
+}
+
+.download::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    background-color: black;
+    transform: scaleY(0%) scaleX(0%);
+    border-radius: 1rem;
+    z-index: 1;
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.download:hover {
+    color: #532ab9;
+    transition: 100ms;
+}
+
+.download:hover:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 1px 15px 25px -10px rgba(0, 0, 0, .25);
+    transform-origin: center;
+    transform: scaleY(100%) scaleX(100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fa-backward-step {
+    margin-right: 0.5rem;
+}
+
+.fa-forward-step {
+    margin-left: 0.4rem;
+}
+
+
+/* ////// */
+
+.fa-solid {
+    z-index: 9999;
+}
+
+.play:hover {}
+
+.next:hover {}
+
+.like:hover {}
+
+.download:hover {}
+
+
+/* ///////////// */
+
+.likebtn {
+    color: rgb(220, 72, 127);
+    transition: color 1s ease-in-out;
+}
+
+#playpause {
+    padding: 5px 5px;
+}
+
+.range-music--hover {
+    margin: -2rem;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: #3b3d50;
+    left: 0;
+    opacity: 0.9;
+    top: -3px;
+    position: absolute;
+    border-radius: 4px;
+    text-align: center;
+    left: 0px;
+    display: none;
+}
+
+.parent-hover {
+    /* right: -12px;
+    position: relative; */
+}
+
+.range-music--progressbar {
+    height: 100%;
+    background-color: #3b3d50;
+    position: absolute;
+    opacity: 0.2;
+    left: 0;
+    top: 0;
+    width: 0%;
+    border-radius: 0.6rem;
+}
+
+.downloadclass {
+    display: block;
+    text-decoration: none;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 5px;
+}
+
+.fa-cloud-arrow-down {
+    width: 2.5rem;
+    height: 2rem;
+}
+
+.range-all {
+    margin-bottom: 2rem;
+}
+
+.time-spanstart {
+    position: relative;
+    /* margin: 0 auto; */
+    width: 38rem;
+    bottom: -12px;
+    margin-top: 0rem;
+}
