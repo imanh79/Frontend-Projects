@@ -1,3 +1,7 @@
+window.addEventListener("load", (e) => {
+    document.getElementById("loader").style.display = "none";
+    console.log("loaded");
+})
 const Tracks = [{
     name: "Moral of the Story",
     artist: "Ashe",
@@ -9,7 +13,7 @@ const Tracks = [{
     name: "Dream",
     artist: "Imagine Dragons",
     cover: "dream-imagine-drogons.jpg",
-    source: "https://dl.musicdel.ir/Music/1401/01/imagine_dragons_dream.mp3",
+    source: "https://ts1.tarafdari.com/contents/user147168/content-sound/09_dream.mp3",
     link: "http://81.4.110.89/Imagine-Dragons-Dream-320.mp3",
     favorited: false
 }, {
@@ -42,7 +46,7 @@ const Tracks = [{
     favorited: false
 }]
 console.log(Tracks[0]);
-const myAudio = new Audio("https://dl.pinkmusic.ir/uploads/2023/01/Dj-Goja-x-Magic-Phase-Calm-Down-Rema-Cover-.mp3"),
+const myAudio = new Audio(),
     play = document.querySelector("#playpause"),
     timer = document.querySelector(".time-music"),
     timermusic = document.querySelector(".time-music--org"),
@@ -62,7 +66,20 @@ const myAudio = new Audio("https://dl.pinkmusic.ir/uploads/2023/01/Dj-Goja-x-Mag
 let intervalId = null,
     duration;
 let count = 0
+document.getElementById("loader").style.display = "block";
 
+// Code to load content goes here
+// setTimeout(function() {
+//     document.querySelector('.loading-container').style.display = 'none';
+//     // Code to display content goes here
+// }, 3000); // Set timeout to simulate loading time
+myAudio.onloadedmetadata = function() {
+    var totalAudioTime = myAudio.duration;
+    var formattedTime = formatTime(totalAudioTime);
+    // مقدار کل زمان صدا به فرمت ساعتی (hh:mm:ss)
+    timermusic.innerHTML = formattedTime
+
+}
 download.addEventListener("click", () => {
     const downloadButton = document.querySelector(".download");
     downloadButton.style.color = "#068d20";
@@ -79,12 +96,12 @@ myAudio.addEventListener('canplaythrough', () => {
     duration = myAudio.duration;
 });
 window.addEventListener("DOMContentLoaded", function() {
-        for (let i = 0; i < Tracks.length; i++) {
-            const track = Tracks[i];
-            const source = track.source;
-            const trackAudio = new Audio(source);
-            myAudio.appendChild(trackAudio);
-        }
+        // for (let i = 0; i < Tracks.length; i++) {
+        //     const track = Tracks[i];
+        //     const source = track.source;
+        //     const trackAudio = new Audio(source);
+        //     myAudio.appendChild(trackAudio);
+        // }
         play.setAttribute("class", "fa-solid fa-play")
             // دریافت اطلاعات از localStorage
         const savedData = JSON.parse(localStorage.getItem('musicData'));
@@ -267,12 +284,4 @@ function formatTime(seconds) {
     } else {
         return minutes + ':' + remainingSeconds;
     }
-}
-
-myAudio.onloadedmetadata = function() {
-    var totalAudioTime = myAudio.duration;
-    var formattedTime = formatTime(totalAudioTime);
-    // مقدار کل زمان صدا به فرمت ساعتی (hh:mm:ss)
-    timermusic.innerHTML = formattedTime
-
 }
