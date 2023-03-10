@@ -1,9 +1,23 @@
-@media screen and (max-width: 1400px) {}
-
-@media screen and (max-width: 1200px) {}
-
-@media screen and (max-width: 992px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 576px) {}
+    @media screen and (max-width: 1400px) {}
+    
+    @media screen and (max-width: 1200px) {}
+    
+    @media screen and (max-width: 992px) {}
+    
+    @media screen and (max-width: 768px) {}
+    
+    @media screen and (max-width: 576px) {
+        .container {
+            width: unset;
+            padding-left: unset;
+            padding-right: unset;
+            margin-right: unset;
+            margin-left: unset;
+        }
+        .all {
+            height: unset;
+            width: unset;
+            margin: unset;
+            border-radius: 0;
+        }
+    }

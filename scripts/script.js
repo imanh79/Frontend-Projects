@@ -40,37 +40,78 @@ const Tracks = [{
     source: "https://ts5.tarafdari.com/contents/user628719/content-sound/sia_-_saved_my_life.mp3",
     link: "http://81.4.110.89/Sia-Saved-My-Life-320.mp3",
     favorited: false
-}]
-console.log(Tracks[0]);
-const myAudio = new Audio(),
-    play = document.querySelector("#playpause"),
-    timer = document.querySelector(".time-music"),
-    timermusic = document.querySelector(".time-music--org"),
-    timehover = document.querySelector(".range-music--hover"),
-    progressBar = document.querySelector('.range-music--progress'),
-    progressBar2 = document.querySelector('.range-music--progressbar'),
-    rangemusic = document.querySelector('.range-music'),
-    like = document.querySelector(".fa-heart"),
-    next = document.querySelector(".next"),
-    backgimage = document.querySelector(".image-side"),
-    pervious = document.querySelector(".previous"),
-    artist = document.querySelector(".singer"),
-    soundname = document.querySelector(".music-name"),
-    download = document.querySelector(".downloadclass")
+}];
 
 
-let intervalId = null,
-    duration;
-let count = 0
-document.querySelector(".parent-loader").style.display = "block";
+const myAudio = new Audio();
+const play = document.querySelector("#playpause");
+const timer = document.querySelector(".time-music");
+const timermusic = document.querySelector(".time-music--org");
+const timehover = document.querySelector(".range-music--hover");
+const progressBar = document.querySelector('.range-music--progress');
+const progressBar2 = document.querySelector('.range-music--progressbar');
+const rangemusic = document.querySelector('.range-music');
+const like = document.querySelector(".fa-heart");
+const next = document.querySelector(".next");
+const backgimage = document.querySelector(".image-side");
+const pervious = document.querySelector(".previous");
+const artist = document.querySelector(".singer");
+const soundname = document.querySelector(".music-name");
+const download = document.querySelector(".downloadclass");
+
+let intervalId = null;
+let duration;
+let count = 0;
+
+const loader = document.querySelector(".parent-loader");
+
 window.addEventListener("load", (e) => {
-    document.querySelector(".parent-loader").style.display = "none";
-    console.log("loaded");
-    for (let i = 0; i < Tracks.length; i++) {
-        myAudio.src = Tracks[i].source;
-        myAudio.load();
+    loader.style.display = "none";
+});
+
+loader.style.display = "block";
+
+const checkLoadInterval = setInterval(() => {
+    if (timermusic.innerHTML) {
+        clearInterval(checkLoadInterval);
+        // مخفی کردن لودر
+
     }
-})
+}, 50);
+if (timermusic.innerHTML) {
+    showmusic(count);
+    clearInterval(checkLoadInterval);
+}
+
+window.onload = () => {
+    const savedData = JSON.parse(localStorage.getItem('musicData'));
+
+    if (savedData) {
+        count = savedData.count;
+        myAudio.currentTime = savedData.currentTime;
+        Tracksa = savedData.tracks;
+        showmusic(count);
+    } else {
+        const item = Tracks[count];
+        soundname.innerHTML = item.name;
+        artist.innerHTML = item.artist;
+        backgimage.style.backgroundImage = "url('./images/" + item.cover + "')";
+        myAudio.src = item.source;
+    }
+
+    const likeStatus = localStorage.getItem("likeStatus");
+
+    if (likeStatus !== null) {
+        const parsedLikeStatus = JSON.parse(likeStatus);
+
+        if (parsedLikeStatus) {
+            like.classList.add("likebtn");
+        }
+    }
+
+    console.log("loaded");
+};
+
 
 // Code to load content goes here
 // setTimeout(function() {
@@ -88,59 +129,23 @@ download.addEventListener("click", () => {
 timer.addEventListener("click", function(event) {
     event.stopPropagation();
 });
-console.log(next);
-console.log(backgimage.style.backgroundImage);
+
 myAudio.addEventListener('canplaythrough', () => {
     duration = myAudio.duration;
 });
 window.addEventListener("DOMContentLoaded", function() {
-        // for (let i = 0; i < Tracks.length; i++) {
-        //     const track = Tracks[i];
-        //     const source = track.source;
-        //     const trackAudio = new Audio(source);
-        //     myAudio.appendChild(trackAudio);
-        // }
-        play.setAttribute("class", "fa-solid fa-play")
-            // دریافت اطلاعات از localStorage
-        const savedData = JSON.parse(localStorage.getItem('musicData'));
-
-        // اگر داده‌ها در localStorage موجود بودند، آنها را به عنوان اطلاعات پیشفرض قرار بدهید
-        if (savedData) {
-            count = savedData.count;
-            myAudio.currentTime = savedData.currentTime;
-            Tracksa = savedData.tracks;
-            showmusic(count);
-        } else {
-            // در غیر این صورت، اطلاعات پیشفرض را قرار دهید
-            const item = Tracks[count];
-            soundname.innerHTML = item.name;
-            artist.innerHTML = item.artist;
-            backgimage.style.backgroundImage = "url('./images/" + item.cover + "')";
-            myAudio.src = item.source;
-        }
-        const likeStatus = localStorage.getItem("likeStatus");
-        if (likeStatus !== null) {
-            const parsedLikeStatus = JSON.parse(likeStatus);
-            if (parsedLikeStatus) {
-                like.classList.add("likebtn");
-            }
-        }
-    })
-    // MIN:SEC زمان مشخص شده توسط حرکت موس
-
-
-// ذخیره آهنگ در local storage
-myAudio.addEventListener('timeupdate', function() {
-    localStorage.setItem('musicData', JSON.stringify({
-        count,
-        currentTime: myAudio.currentTime,
-        tracks: Tracks
-    }));
-});
+    play.setAttribute("class", "fa-solid fa-play")
+    myAudio.addEventListener('timeupdate', function() {
+        localStorage.setItem('musicData', JSON.stringify({
+            count,
+            currentTime: myAudio.currentTime,
+            tracks: Tracks
+        }));
+    });
+})
 
 function showmusic(counter) {
     const item = Tracks[counter]
-    console.log(item);
     soundname.innerHTML = item.name
     artist.innerHTML = item.artist
     backgimage.style.backgroundImage = "url('./images/" + item.cover + "')";
@@ -162,7 +167,6 @@ next.addEventListener("click", () => {
     if (count > Tracks.length - 1) {
         count = 0;
     }
-    console.log(count);
 
     myAudio.pause();
     play.classList.remove('fa-pause');
@@ -174,7 +178,6 @@ pervious.addEventListener("click", () => {
     if (count < 0) {
         count = Tracks.length - 1;
     }
-    console.log(count);
     showmusic(count)
 })
 
@@ -197,15 +200,6 @@ rangemusic.addEventListener("click", (e) => {
     myAudio.currentTime = currentTimee;
 
 });
-
-myAudio.addEventListener("timeupdate", () => {
-    const duration = myAudio.duration;
-    const currentTimee = myAudio.currentTime;
-    const width = rangemusic.clientWidth;
-    const percentage = (currentTimee / duration) * 100;
-});
-
-
 
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
