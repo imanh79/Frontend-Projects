@@ -67,16 +67,16 @@ const loader = document.querySelector(".parent-loader");
 
 loader.style.display = "block";
 
-const checkLoadInterval = setInterval(() => {
-    if (timermusic.innerHTML !== "") {
-        clearInterval(checkLoadInterval);
-        loader.style.display = "none";
-        showmusic(count);
-    }
-}, 50);
 
 window.addEventListener("load", (e) => {
-    loader.style.display = "none";
+    const checkLoadInterval = setInterval(() => {
+        if (timermusic.innerHTML !== "") {
+            clearInterval(checkLoadInterval);
+            loader.style.display = "none";
+            showmusic(count);
+        }
+    }, 50);
+
 });
 
 
