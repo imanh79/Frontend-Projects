@@ -64,6 +64,27 @@ let duration;
 let count = 0;
 
 const loader = document.querySelector(".parent-loader");
+
+loader.style.display = "block";
+
+const checkLoadInterval = setInterval(() => {
+    if (timermusic.innerHTML !== "") {
+        clearInterval(checkLoadInterval);
+        loader.style.display = "none";
+        showmusic(count);
+    }
+}, 50);
+
+window.addEventListener("load", (e) => {
+    loader.style.display = "none";
+});
+
+
+if (timermusic.innerHTML) {
+    showmusic(count);
+    clearInterval(checkLoadInterval);
+}
+
 window.onload = () => {
     const savedData = JSON.parse(localStorage.getItem('musicData'));
 
@@ -93,25 +114,6 @@ window.onload = () => {
     console.log("loaded");
 };
 
-const checkLoadInterval = setInterval(() => {
-    if (timermusic.innerHTML !== "") {
-        clearInterval(checkLoadInterval);
-        loader.style.display = "none";
-        showmusic(count);
-    }
-}, 50);
-
-window.addEventListener("load", (e) => {
-    loader.style.display = "none";
-});
-
-loader.style.display = "block";
-
-
-if (timermusic.innerHTML) {
-    showmusic(count);
-    clearInterval(checkLoadInterval);
-}
 
 
 
