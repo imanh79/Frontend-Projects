@@ -53,8 +53,14 @@
         display: block;
         height: 100%;
         width: 100%;
-        top: 30%;
+        top: 50%;
+        left: 46%;
+        bottom: 50%;
+        right: 50%;
+    }
+    .on-load {
+        top: calc(50% - 25px);
+        /* این برای تعیین ارتفاع مناسب است */
         left: 50%;
-        transform: translate(-50%, -50%);
     }
 }
