@@ -21,10 +21,9 @@
             height: 100%;
             margin: unset;
             border-radius: 0;
+            padding: 0 2rem;
         }
         .all-pad {
-            padding: 0rem 2rem;
-            padding-top: 0rem;
-            padding-bottom: 0;
+            padding: unset;
         }
     }
