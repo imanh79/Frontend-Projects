@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>music web app</title>
+
     <link rel="stylesheet" href="https://use.typekit.net/byn1xaq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/styles.css">
@@ -17,43 +18,44 @@
         </div>
     </div>
     <div class="container">
-        <section class="all">
-            <div class="all-pad">
-                <div class="image-side"></div>
-                <div class="singer-music">
-                    <h2 class="singer">Selena Gomes</h2>
-                    <p class="music-name">Calm Down</p>
-                </div>
-                <div class="range-all">
-                    <div class="range_parent">
-                        <div class="range-music">
-                            <span class="time-music--org"></span>
-                            <!-- <input type="range" id="seek-bar" min="0" max="100" value="0"> -->
-                            <div class="time-spanstart">
-                                <span class="time-music"></span>
-                            </div>
-                            <div class="range-music--progress"></div>
-                            <div class="parent-hover">
-                                <div class="range-music--hover">00:00</div>
-                                <div class="range-music--progressbar"></div>
+        <div class="all-parent">
+            <section class="all">
+                <div class="all-pad">
+                    <div class="image-side"></div>
+                    <div class="singer-music">
+                        <h2 class="singer">Selena Gomes</h2>
+                        <p class="music-name">Calm Down</p>
+                    </div>
+                    <div class="range-all">
+                        <div class="range_parent">
+                            <div class="range-music">
+                                <span class="time-music--org"></span>
+                                <!-- <input type="range" id="seek-bar" min="0" max="100" value="0"> -->
+                                <div class="time-spanstart">
+                                    <span class="time-music"></span>
+                                </div>
+                                <div class="range-music--progress"></div>
+                                <div class="parent-hover">
+                                    <div class="range-music--hover">00:00</div>
+                                    <div class="range-music--progressbar"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="button-music">
-                    <button class="like" onclick="likes()"><i class="fa-solid fa-heart"></i></button>
-                    <div class="parent-btn">
-                        <button class="previous"><i class="fa-solid fa-backward-step"></i></button>
-                        <button class="play"><i id="playpause" class="fa-solid fa-play"></i></button>
-                        <button class="next"><i class="fa-solid fa-forward-step"></i></button>
+                    <div class="button-music">
+                        <button class="like" onclick="likes()"><i class="fa-solid fa-heart"></i></button>
+                        <div class="parent-btn">
+                            <button class="previous"><i class="fa-solid fa-backward-step"></i></button>
+                            <button class="play"><i id="playpause" class="fa-solid fa-play"></i></button>
+                            <button class="next"><i class="fa-solid fa-forward-step"></i></button>
+                        </div>
+                        <button class="download"><i class="fa-solid fa-cloud-arrow-down"><a class="downloadclass" href=""></a></i></button>
                     </div>
-                    <button class="download"><i class="fa-solid fa-cloud-arrow-down"><a class="downloadclass" href=""></a></i></button>
+
                 </div>
-
-            </div>
+            </section>
+        </div>
     </div>
-
-    </section>
 
 
     <script src="scripts/script.js"></script>
