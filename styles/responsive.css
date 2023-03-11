@@ -6,24 +6,4 @@
     
     @media screen and (max-width: 768px) {}
     
-    @media screen and (max-width: 576px) {
-        .container {
-            padding-right: 0;
-            padding-left: 0;
-            height: 100%;
-            width: 100%;
-        }
-        .image-side {
-            height: 57rem;
-        }
-        .all {
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
-            border-radius: 0;
-            padding: 0 2rem;
-        }
-        .all-pad {
-            padding: unset;
-        }
-    }
+    @media screen and (max-width: 576px) {}
