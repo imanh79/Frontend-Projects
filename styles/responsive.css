@@ -8,11 +8,11 @@
     
     @media screen and (max-width: 576px) {
         .container {
-            width: unset;
-            padding-left: unset;
-            padding-right: unset;
-            margin-right: unset;
-            margin-left: unset;
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .image-side {
+            height: 57rem;
         }
         .all {
             height: 72rem;
