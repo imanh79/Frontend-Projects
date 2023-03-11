@@ -47,4 +47,14 @@
         overflow: hidden;
         height: 62vh;
     }
+    .parent-loader .on-load {
+        opacity: 1;
+        position: fixed;
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

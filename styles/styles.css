@@ -548,7 +548,7 @@ a {
     opacity: 0;
     animation: fade-in-up 1s forwards;
     top: 50%;
-    left: 46%;
+    left: 50%;
     position: absolute;
 }
 
