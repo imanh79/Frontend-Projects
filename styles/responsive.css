@@ -15,9 +15,14 @@
             margin-left: unset;
         }
         .all {
-            height: unset;
+            height: 72rem;
             width: unset;
             margin: unset;
             border-radius: 0;
+        }
+        .all-pad {
+            padding: 5rem 2rem;
+            padding-top: 2rem;
+            padding-bottom: 0;
         }
     }
