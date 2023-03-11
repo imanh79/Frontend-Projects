@@ -1,13 +1,24 @@
-    @media screen and (max-width: 1400px) {}
-    
-    @media screen and (max-width: 1200px) {}
-    
-    @media screen and (max-width: 992px) {}
-    
-    @media screen and (max-width: 768px) {}
-    
-    @media screen and (max-width: 576px) {
-        .container {
-            min-height: calc(100vh - 63rem);
-        }
-    }
+            @media screen and (max-width: 1400px) {}
+            
+            @media screen and (max-width: 1200px) {}
+            
+            @media screen and (max-width: 992px) {}
+            
+            @media screen and (max-width: 768px) {}
+            
+            @media screen and (max-width: 576px) {
+                .container {
+                    min-height: calc(100vh - 63rem);
+                    padding-right: unset;
+                    padding-left: unset;
+                }
+                .all {
+                    margin: 0 auto;
+                    border-radius: 0;
+                }
+                .all-pad {
+                    padding: 2rem 2rem;
+                    padding-top: 2rem;
+                    /* padding-bottom: 1rem;*/
+                }
+            }
