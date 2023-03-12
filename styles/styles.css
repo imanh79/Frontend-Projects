@@ -18,6 +18,7 @@ html {
 *::after,
 *::before {
     box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
