@@ -600,5 +600,10 @@ a {
     }
 }
 
+body {
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+}
+
 
 /* ///////////////////////////////// */

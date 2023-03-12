@@ -11,29 +11,28 @@
 @media (min-width: 510px) {}
 
 @media screen and (max-width: 767px) {
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
+    html,
+    body {
+        height: initial;
+        overflow: initial;
     }
     .container {
         padding-right: unset;
         padding-left: unset;
-        height: 100%;
+        /* height: 100%; */
     }
     .all-pad {
-        padding: 2rem 2rem;
-        padding-top: 6rem;
-        padding-bottom: calc(100vh - 70vh);
-        overflow-x: hidden;
+        padding: 0rem 2rem;
+        padding-top: 1rem;
+        /* padding-bottom: calc(100vh - 70vh); */
+        /* overflow-x: hidden;
         overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch; */
         /* برای مثال canhange 70 به ارتفاع مد نظرتان */
     }
     .all {
-        width: 100%;
-        height: 100vh;
+        /* width: 100%;
+        height: 100vh; */
         margin-right: 0;
         margin-top: 0;
         margin-bottom: 0;
@@ -43,9 +42,21 @@
         overflow-y: hidden;
         /* جلوگیری از اسکرول کردن صفحه را در حالت موبایل */
     }
+    .singer-music {
+        margin: 2.5rem 0;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .button-music {
+        margin-bottom: 1rem
+    }
+    .range-all {
+        margin-bottom: 2.5rem;
+    }
     .image-side {
         overflow: hidden;
-        height: 62vh;
+        width: 100%;
+        height: 57rem;
     }
     .parent-loader .on-load {
         opacity: 1;
@@ -57,10 +68,5 @@
         left: 46%;
         bottom: 50%;
         right: 50%;
-    }
-    .on-load {
-        top: calc(50% - 25px);
-        /* این برای تعیین ارتفاع مناسب است */
-        left: 50%;
     }
 }
