@@ -56,7 +56,7 @@
     .image-side {
         overflow: hidden;
         width: 100%;
-        height: 57rem;
+        height: 59rem;
     }
     .parent-loader .on-load {
         opacity: 1;
@@ -65,7 +65,7 @@
         height: 100%;
         width: 100%;
         top: 50%;
-        left: 46%;
+        left: 50%;
         bottom: 50%;
         right: 50%;
     }
