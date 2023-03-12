@@ -43,31 +43,29 @@ const Tracks = [{
 }];
 
 
-const myAudio = new Audio();
-const play = document.querySelector("#playpause");
-const timer = document.querySelector(".time-music");
-const timermusic = document.querySelector(".time-music--org");
-const timehover = document.querySelector(".range-music--hover");
-const progressBar = document.querySelector('.range-music--progress');
-const progressBar2 = document.querySelector('.range-music--progressbar');
-const rangemusic = document.querySelector('.range-music');
-const like = document.querySelector(".fa-heart");
-const next = document.querySelector(".next");
-const backgimage = document.querySelector(".image-side");
-const pervious = document.querySelector(".previous");
-const artist = document.querySelector(".singer");
-const soundname = document.querySelector(".music-name");
-const download = document.querySelector(".downloadclass");
+const myAudio = new Audio(),
+    play = document.querySelector("#playpause"),
+    timer = document.querySelector(".time-music"),
+    timermusic = document.querySelector(".time-music--org"),
+    timehover = document.querySelector(".range-music--hover"),
+    progressBar = document.querySelector('.range-music--progress'),
+    progressBar2 = document.querySelector('.range-music--progressbar'),
+    rangemusic = document.querySelector('.range-music'),
+    like = document.querySelector(".fa-heart"),
+    next = document.querySelector(".next"),
+    backgimage = document.querySelector(".image-side"),
+    pervious = document.querySelector(".previous"),
+    artist = document.querySelector(".singer"),
+    soundname = document.querySelector(".music-name"),
+    download = document.querySelector(".downloadclass"),
+    loader = document.querySelector(".parent-loader")
 
-let intervalId = null;
-let duration;
-let count = 0;
+let intervalId = null,
+    duration,
+    count = 0
 
-const loader = document.querySelector(".parent-loader");
 
 loader.style.display = "block";
-
-
 window.addEventListener("load", (e) => {
     const checkLoadInterval = setInterval(() => {
         if (timermusic.innerHTML !== "") {
@@ -114,15 +112,6 @@ window.onload = () => {
     console.log("loaded");
 };
 
-
-
-
-// Code to load content goes here
-// setTimeout(function() {
-//     document.querySelector('.loading-container').style.display = 'none';
-//     // Code to display content goes here
-// }, 3000); // Set timeout to simulate loading time
-
 download.addEventListener("click", () => {
     const downloadButton = document.querySelector(".download");
     downloadButton.style.color = "#068d20";
@@ -130,6 +119,7 @@ download.addEventListener("click", () => {
         downloadButton.style.color = "#acb8cc";
     }, 1000);
 });
+
 timer.addEventListener("click", function(event) {
     event.stopPropagation();
 });
@@ -137,6 +127,7 @@ timer.addEventListener("click", function(event) {
 myAudio.addEventListener('canplaythrough', () => {
     duration = myAudio.duration;
 });
+
 window.addEventListener("DOMContentLoaded", function() {
     play.setAttribute("class", "fa-solid fa-play")
     myAudio.addEventListener('timeupdate', function() {
@@ -258,10 +249,9 @@ var update = setInterval(function() {
         secs = '0' + String(secs);
     }
     timer.innerHTML = mins + ':' + secs;
-    // timehover.innerHTML = mins + ':' + secs;
 }, 10);
 
-///////////////////////////////////////////////// timeer music ///////////////////////////////////////////
+
 function formatTime(seconds) {
     var hours = Math.floor(seconds / 3600);
     var minutes = Math.floor((seconds - (hours * 3600)) / 60);
@@ -270,7 +260,6 @@ function formatTime(seconds) {
     if (remainingSeconds < 10) {
         remainingSeconds = '0' + remainingSeconds;
     }
-
     if (hours) {
         if (minutes < 10) {
             minutes = '0' + minutes;

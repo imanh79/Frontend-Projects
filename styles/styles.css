@@ -1,12 +1,12 @@
 @import "reset.css";
 @import "grid.css";
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,400;1,500&display=swap');
-
-/*
-
----- main ----
-
-*/
+:root {
+    --background-color: #dfe7ef;
+    --btn-color: #acb8cc;
+    --hover-color: #532ab9;
+    --black-color: black;
+}
 
 html {
     box-sizing: border-box;
@@ -22,20 +22,24 @@ html {
 
 body {
     font-size: 1.6rem;
-    background: #dfe7ef;
+    background: var(--background-color);
 }
 
 a {
     text-decoration: none;
 }
 
+
+/*
+
+ - Section -
+
+*/
+
 .all {
     box-shadow: 0px 15px 35px -5px rgb(50 88 130 / 32%);
     margin: 0 auto;
-    /* width: 42rem; */
     margin-top: 8rem;
-    /* width: 42rem; */
-    /* height: 52.5rem; */
     background-color: #eef3f7;
     border-radius: 1rem;
     font-family: "Mulish";
@@ -48,30 +52,29 @@ a {
     padding-bottom: 1rem;
 }
 
-.nav {}
 
-.nav__list {
-    display: flex;
-    justify-content: space-evenly;
-}
+/*
 
-.nav__list-item {}
+ - image -
 
-.nav__list-item--active {
-    margin: 0 -12rem;
-}
+*/
 
 .image-side {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 37rem;
-    /* margin: 5rem auto 1rem auto; */
-    /* width: 28rem; */
     background-image: url("../images/Calm-Down\ selena\ gomes.jpg");
     border-radius: 1.5rem;
     margin-bottom: 1rem;
 }
+
+
+/*
+
+ - singer-music -
+
+*/
 
 .singer-music {
     text-align: center;
@@ -95,6 +98,46 @@ a {
     margin-bottom: 13px;
 }
 
+
+/*
+
+ - range-music -
+
+*/
+
+.range-all {
+    margin-bottom: 2rem;
+}
+
+.range-music--hover {
+    margin: -2rem;
+    color: #fff;
+    font-size: 13px;
+    white-space: pre;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: #3b3d50;
+    left: 0;
+    opacity: 0.9;
+    top: -3px;
+    position: absolute;
+    border-radius: 4px;
+    text-align: center;
+    left: 0px;
+    display: none;
+}
+
+.range-music--progressbar {
+    height: 100%;
+    background-color: #3b3d50;
+    position: absolute;
+    opacity: 0.2;
+    left: 0;
+    top: 0;
+    width: 0%;
+    border-radius: 0.6rem;
+}
+
 .range_parent {
     margin: 0 auto;
 }
@@ -108,6 +151,7 @@ a {
     border-radius: 0.6rem;
     margin-top: 14px;
     margin: 0 2.5rem;
+    cursor: pointer;
 }
 
 #seek-bar::-webkit-slider-thumb {
@@ -151,7 +195,7 @@ a {
     border: none;
     stroke-width: 0;
     font-size: 2rem;
-    color: #acb8cc;
+    color: var(--btn-color);
     outline: none;
 }
 
@@ -160,7 +204,7 @@ a {
     border: none;
     stroke-width: 0;
     font-size: 2rem;
-    color: #acb8cc;
+    color: var(--btn-color);
     outline: none;
 }
 
@@ -169,7 +213,7 @@ a {
     border: none;
     stroke-width: 0;
     font-size: 2rem;
-    color: #acb8cc;
+    color: var(--btn-color);
     outline: none;
 }
 
@@ -182,7 +226,7 @@ a {
     border: none;
     stroke-width: 0;
     font-size: 2rem;
-    color: #acb8cc;
+    color: var(--btn-color);
     outline: none;
     transition: color 1s ease-in-out;
 }
@@ -192,7 +236,7 @@ a {
     border: none;
     stroke-width: 0;
     font-size: 2rem;
-    color: #acb8cc;
+    color: var(--btn-color);
     outline: none;
     transition: color 1s ease-in-out;
 }
@@ -205,7 +249,7 @@ a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb8cc;
+    color: var(--btn-color);
     z-index: 2;
     border-radius: 1rem;
     transition: 100ms;
@@ -217,7 +261,7 @@ a {
     width: 100%;
     height: 100%;
     transform-origin: center;
-    background-color: black;
+    background-color: var(--black-color);
     transform: scaleY(0%) scaleX(0%);
     border-radius: 1rem;
     z-index: 1;
@@ -225,7 +269,7 @@ a {
 }
 
 .previous:hover {
-    color: #532ab9;
+    color: var(--hover-color);
     transition: 100ms;
 }
 
@@ -250,7 +294,7 @@ a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb8cc;
+    color: var(--btn-color);
     z-index: 2;
     border-radius: 1rem;
     transition: 100ms;
@@ -262,7 +306,7 @@ a {
     width: 100%;
     height: 100%;
     transform-origin: center;
-    background-color: black;
+    background-color: var(--black-color);
     transform: scaleY(0%) scaleX(0%);
     border-radius: 1rem;
     z-index: 1;
@@ -270,7 +314,7 @@ a {
 }
 
 .play:hover {
-    color: #532ab9;
+    color: var(--hover-color);
     transition: 100ms;
 }
 
@@ -287,9 +331,6 @@ a {
     transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-/* ///// */
-
 .next {
     position: relative;
     width: 3rem;
@@ -298,7 +339,7 @@ a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb8cc;
+    color: var(--btn-color);
     z-index: 2;
     border-radius: 1rem;
     transition: 100ms;
@@ -310,7 +351,7 @@ a {
     width: 100%;
     height: 100%;
     transform-origin: center;
-    background-color: black;
+    background-color: var(--black-color);
     transform: scaleY(0%) scaleX(0%);
     border-radius: 1rem;
     z-index: 1;
@@ -318,7 +359,7 @@ a {
 }
 
 .next:hover {
-    color: #532ab9;
+    color: var(--hover-color);
     transition: 100ms;
 }
 
@@ -335,9 +376,6 @@ a {
     transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-/* /////// /*/
-
 .like {
     position: relative;
     width: 3rem;
@@ -346,7 +384,7 @@ a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb8cc;
+    color: var(--btn-color);
     z-index: 2;
     border-radius: 1rem;
     transition: 100ms;
@@ -358,7 +396,7 @@ a {
     width: 100%;
     height: 100%;
     transform-origin: center;
-    background-color: black;
+    background-color: var(--black-color);
     transform: scaleY(0%) scaleX(0%);
     border-radius: 1rem;
     z-index: 1;
@@ -366,7 +404,7 @@ a {
 }
 
 .like:hover {
-    color: #532ab9;
+    color: var(--hover-color);
     transition: 100ms;
 }
 
@@ -383,9 +421,6 @@ a {
     transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
-/* /////////// */
-
 .download {
     position: relative;
     width: 3rem;
@@ -394,7 +429,7 @@ a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: #acb8cc;
+    color: var(--btn-color);
     z-index: 2;
     border-radius: 1rem;
 }
@@ -405,7 +440,7 @@ a {
     width: 100%;
     height: 100%;
     transform-origin: center;
-    background-color: black;
+    background-color: var(--black-color);
     transform: scaleY(0%) scaleX(0%);
     border-radius: 1rem;
     z-index: 1;
@@ -413,7 +448,7 @@ a {
 }
 
 .download:hover {
-    color: #532ab9;
+    color: var(--hover-color);
     transition: 100ms;
 }
 
@@ -438,23 +473,16 @@ a {
     margin-left: 0.4rem;
 }
 
-
-/* ////// */
-
 .fa-solid {
     z-index: 9999;
 }
 
-.play:hover {}
 
-.next:hover {}
+/*
 
-.like:hover {}
+ - like-btn -
 
-.download:hover {}
-
-
-/* ///////////// */
+*/
 
 .likebtn {
     color: rgb(220, 72, 127);
@@ -463,40 +491,6 @@ a {
 
 #playpause {
     padding: 5px 5px;
-}
-
-.range-music--hover {
-    margin: -2rem;
-    color: #fff;
-    font-size: 13px;
-    white-space: pre;
-    padding: 3px 6px;
-    border-radius: 4px;
-    background: #3b3d50;
-    left: 0;
-    opacity: 0.9;
-    top: -3px;
-    position: absolute;
-    border-radius: 4px;
-    text-align: center;
-    left: 0px;
-    display: none;
-}
-
-.parent-hover {
-    /* right: -12px;
-    position: relative; */
-}
-
-.range-music--progressbar {
-    height: 100%;
-    background-color: #3b3d50;
-    position: absolute;
-    opacity: 0.2;
-    left: 0;
-    top: 0;
-    width: 0%;
-    border-radius: 0.6rem;
 }
 
 .downloadclass {
@@ -513,43 +507,41 @@ a {
     height: 2rem;
 }
 
-.range-all {
-    margin-bottom: 2rem;
-}
-
 .time-spanstart {
     position: relative;
-    /* margin: 0 auto; */
     width: 38rem;
     bottom: -12px;
     margin-top: 0rem;
 }
 
+
+/*
+
+ - loader -
+
+*/
+
 .parent-loader {
-    /* display: flex; */
     display: none;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 999;
-    left: 0;
-    background: #dfe7ef;
-    /* right: 101%; */
-    /* left: unset; */
-    /* bottom: 50%; */
-    /* top: 50%; */
     position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
 }
 
 .on-load {
     opacity: 0;
     animation: fade-in-up 1s forwards;
+    position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
-    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes fade-in-up {
@@ -599,11 +591,3 @@ a {
         border-top-color: #7769E4;
     }
 }
-
-body {
-    overflow-y: scroll;
-    overscroll-behavior-y: none;
-}
-
-
-/* ///////////////////////////////// */
