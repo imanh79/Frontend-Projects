@@ -78,7 +78,7 @@ ul {
 }
 
 .titles i {
-    visibility: hidden;
+    visibility: visible;
 }
 
 .opacity {
