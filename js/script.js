@@ -41,7 +41,6 @@ function addToArray(name, last) {
 // Event listener for the "save" button
 save.addEventListener("click", (e) => {
     deleteBtn.disabled = true;
-    todoicon.style.visibility = "visible";
     parent.classList.toggle("displayblock");
     parent2.classList.toggle("displaynone");
     const cr = document.createElement("div");
@@ -158,7 +157,7 @@ addtask.addEventListener("click", () => {
     parent.classList.remove("displayblock")
     parent2.classList.remove("displaynone")
     save.disabled = true;
-    todoicon.style.visibility = "hidden"
+
 });
 
 // Event listener for the "cancel" button
@@ -166,5 +165,5 @@ cancel.addEventListener("click", () => {
     parent.classList.add("displayblock")
     parent2.classList.add("displaynone")
     save.disabled = true;
-    todoicon.style.visibility = "visible"
+
 });
