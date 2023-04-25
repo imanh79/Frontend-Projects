@@ -1,0 +1,68 @@
+<!-- Use HTML5 doctype -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Page Title -->
+    <title>Todo App</title>
+    <!-- External stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="icon" href="logo/checklist.png">
+</head>
+
+<body>
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- Main title with icon -->
+        <div class="titles">
+            <h1>Todo-app</h1>
+            <i class="fa-solid fa-list-ul"></i>
+        </div>
+
+        <!-- Parent container for list items -->
+        <div class="parent">
+            <ul class="answer"></ul>
+
+            <!-- Buttons container for actions -->
+            <div class="parent2-buttons">
+                <div class="btns">
+                    <button class="removebtns" id="delete-btn" disabled><i class="fa-solid fa-check"></i></button>
+                    <button id="open" disabled><i class="fa-regular fa-xmark"></i></button>
+                </div>
+                <button class="addtask">Add task</button>
+            </div>
+        </div>
+
+        <!-- Form container for adding new tasks -->
+        <div class="parent2">
+            <form action="#">
+                <input type="text" class="parent2-input" placeholder="todo name"><br>
+                <label></label>
+                <textarea cols="30" rows="3" class="parent2-textarea" placeholder="todo Task"></textarea>
+            </form>
+
+            <!-- Buttons container for form actions -->
+            <div class="parent2-buttons">
+                <button class="save" disabled>save</button>
+                <button class="cancel">cancel</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript file -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

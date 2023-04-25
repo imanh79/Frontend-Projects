@@ -1,0 +1,506 @@
+/* Import styles */
+
+@import "reset.css";
+
+/* Set CSS variables */
+
+:root {
+    --content-empty: unset;
+    --width-small: 36px;
+    --width-li: 36px
+}
+
+
+/* Global styles */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dee2e6;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+
+/*
+
+-- Reset Styles
+
+*/
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+
+/* 
+
+-- titles styles 
+
+*/
+
+.titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #343a40;
+    border-bottom: 1px solid #0000006e;
+    padding-bottom: 0.5rem;
+}
+
+.titles i {
+    visibility: hidden;
+}
+
+.opacity {
+    opacity: 0.4;
+}
+
+.btns {
+    display: flex;
+}
+
+.remove-node {
+    color: #4484ed;
+}
+
+
+/* 
+
+-- addtask styles 
+
+*/
+
+.addtask {
+    font-family: 'Roboto';
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 8px;
+    background: none;
+    color: #1a3b5d;
+    outline: none;
+}
+
+.addtask:hover {
+    border: 1px solid #4484ed;
+}
+
+
+/* 
+
+-- array styles 
+
+*/
+
+.array {
+    height: auto;
+    display: none;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 85px auto 0;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+}
+
+
+/* 
+
+-- container styles 
+
+*/
+
+.container {
+    color: #343a40;
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 1.5rem 2.5rem;
+    margin: auto 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+    font-family: 'Roboto';
+}
+
+
+/* 
+
+-- parent styles 
+
+*/
+
+.parent {
+    text-align: center;
+    display: none;
+}
+
+.parent2 {
+    display: block;
+    font-family: 'Roboto';
+}
+
+.parent__input {
+    width: 100%;
+}
+
+.parent2-input {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 8px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+    outline: none;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.parent2-input:focus {
+    border: 1px solid #4484ed;
+    outline: #4484ed;
+}
+
+.parent2-textarea {
+    resize: none;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 8px;
+    background: none;
+    color: #1a3b5d;
+    font-family: "Source Sans Pro", sans-serif;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.parent2-textarea:focus {
+    border: 1px solid #4484ed;
+    outline: #4484ed;
+}
+
+.parent2-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.parentnode-div {
+    padding-left: 5px;
+    margin-left: 3rem;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+/* 
+
+-- display styles 
+
+*/
+
+.displaynone {
+    display: none;
+}
+
+.displayblock {
+    display: block;
+}
+
+
+/* 
+
+-- list(ez) styles 
+
+*/
+
+.ez {
+    padding: 0.5rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    ;
+    height: 5rem;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.todo-node {
+    border: 1px black solid;
+    margin-bottom: 1rem;
+    display: flex;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* 
+
+-- save styles 
+
+*/
+
+.save {
+    font-family: 'Roboto';
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    padding: 2px 7px 4px 7px;
+    background: none;
+    outline: none;
+}
+
+.save:hover {
+    border: 1px solid #4484ed;
+}
+
+
+/* 
+
+-- cancel styles 
+
+*/
+
+.cancel {
+    font-family: 'Roboto';
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced6e0;
+    transition: all 0.3s ease-in-out;
+    /* font-size: 18px; */
+    padding: 2px 7px 4px 7px;
+    background: none;
+    outline: none;
+}
+
+.cancel:hover {
+    border: 1px solid #4484ed;
+}
+
+button:disabled .fa-check {
+    color: #5e96f66a;
+}
+
+.fa-check {
+    color: #4484ed;
+}
+
+
+/* 
+
+-- small styles 
+
+*/
+
+small {
+    width: auto;
+    height: 2rem;
+    font-size: 1.4rem;
+}
+
+small::before {
+    content: var(--content-empty);
+    width: var(--width-small);
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400;
+    bottom: 3rem;
+    left: 0;
+    top: 29px;
+    height: 0.5px;
+    background-color: black;
+    position: absolute;
+    margin-left: 5px;
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+}
+
+
+/* 
+
+-- list item styles 
+
+*/
+
+.list-item {
+    width: auto;
+    height: 2rem;
+    font-size: 1.4rem;
+}
+
+.list-item::after {
+    content: var(--content-empty);
+    width: var(--width-li);
+    bottom: 1rem;
+    left: 0;
+    top: 9px;
+    height: 0.5px;
+    background-color: black;
+    position: absolute;
+    margin-left: 5px;
+    line-height: 1px;
+    display: inline-block;
+}
+
+.lableparent {
+    display: flex;
+}
+
+
+/* 
+
+-- checkbox styles 
+
+*/
+
+.checkbox {
+    position: absolute;
+    left: -3rem;
+    top: 8px;
+    appearance: none;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+
+/* 
+
+-- fa styles 
+
+*/
+
+.fa-trash {
+    color: #f00707;
+}
+
+.fa-xmark {
+    color: #f00707;
+}
+
+
+/* 
+
+-- buttons styles 
+
+*/
+
+button:disabled .fa-trash {
+    color: #f0282889;
+}
+
+button:disabled .fa-xmark {
+    color: #f0282889;
+}
+
+
+/* 
+
+-- inputs type[checkboxs] styles 
+
+*/
+
+i input[type=checkbox] {
+    cursor: pointer;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-color: #e9e9e9;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 0px solid rgba(0, 0, 0, .25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+input[type=checkbox]:checked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    background-color: #5e97f6;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e")
+}
+
+input[type=checkbox]:focus {
+    box-shadow: 0 0 0px 2px #0e57cd46;
+    border-radius: 4px;
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    appearance: none;
+}
