@@ -9,29 +9,34 @@
 @media (min-width: 1400px) {}
 
 @media (max-width: 510px) {
-    .box-weather {
-        min-width: 21.32rem;
-        min-height: 14rem;
-        font-size: 13px;
-    }
     .span-time {
-        margin-bottom: 0.8rem;
         text-align: center;
     }
     .span-time span {
         font-size: 12px;
     }
-    .input-search {
-        padding: 0.3rem 1rem;
-    }
-    .butt {
-        padding: 0.26rem 7px;
-    }
 }
 
 @media (max-width: 390px) {
+    .box-outside {
+        min-width: 19.32rem;
+    }
     .box-weather {
-        min-width: 18.32rem;
-        min-height: 13rem;
+        height: 11rem;
+    }
+    .span-all {
+        font-size: 13px;
+    }
+    #dark-mode-toggle {
+        left: -42px;
+    }
+}
+
+@media (max-width: 320px) {
+    .box-outside {
+        min-width: 15.32rem;
+    }
+    .box-weather {
+        height: 10rem;
     }
 }
