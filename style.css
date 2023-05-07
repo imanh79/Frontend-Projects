@@ -1,0 +1,204 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:wght@600&family=Roboto&display=swap');
+.container-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+body {
+    position: relative;
+}
+
+.container {
+    max-width: 66rem;
+    border-radius: 8px;
+    padding: 1.5rem 2.5rem;
+    margin: 0 auto;
+    background-color: #d3d5d84a;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+    font-family: 'Roboto', sans-serif;
+    margin-top: 7rem
+}
+
+.title {
+    margin: 1rem 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.desc {
+    margin-bottom: 1rem;
+}
+
+.total {
+    margin-left: 1rem;
+}
+
+.parent-shopping {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin: 0 1rem;
+    align-items: flex-end;
+}
+
+.box-shoping {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 34rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    display: none;
+    text-align: end;
+    min-height: 8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.shop-text {
+    border-bottom: 1px solid transparent;
+    /* خط پایین را با یک مقدار شفاف تعریف می‌کنیم */
+    transition: border-bottom 0.5s ease;
+    /* تعریف انتقال برای خاصیت border-bottom با مدت زمان 0.3 ثانیه و تابع transition easing ease */
+    padding-bottom: 0.2rem;
+}
+
+.shop-text:hover {
+    border-bottom: 1px solid black;
+    /* خط پایین را با یک مقدار مشخص تعریف می‌کنیم */
+}
+
+.num {
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    top: 11px;
+    /* padding: 0px 4px; */
+    width: 15px;
+    height: 18px;
+    color: white;
+    background: #2b2b2bd6;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button-add {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s ease;
+    padding-bottom: 0.1rem;
+}
+
+.button-add:hover {
+    border-bottom: 1px solid black;
+}
+
+.fa-bag-shopping {
+    z-index: 2;
+    font-size: 17px;
+}
+
+.fa-cart-plus {
+    font-size: 18px;
+}
+
+.removenode,
+.button-add {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.fa-x {
+    margin: 2rem 5px 0 0;
+}
+
+.displayblock {
+    display: block;
+}
+
+.displaynone {
+    display: none;
+}
+
+.box {
+    height: 22rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid #9999996e;
+    border-radius: 8px;
+}
+
+.img {
+    width: 100%;
+    height: 60%;
+    /* padding-bottom: 100%; */
+    overflow: hidden;
+}
+
+.parent-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.box-node {
+    display: flex;
+    /* تعیین عرض باکس */
+    border: 1px solid #999999c9;
+    margin: 1rem;
+    border-radius: 7px
+}
+
+.parent-node {
+    text-align: left;
+}
+
+.img2 {
+    width: 200px;
+    height: 125px;
+    margin-right: 10px;
+    /* فاصله بین عکس و محتوا */
+}
+
+.img2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title2 {
+    margin: 0.5rem 0 1rem 0;
+}
+
+.parent-btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 11px 15px 11px 15px;
+}
+
+@media screen and (max-width: 979px) {
+    .box {
+        height: 23rem;
+    }
+}
