@@ -80,11 +80,11 @@ body {
 
 .num {
     position: absolute;
-    right: -10px;
+    right: -11px;
     text-align: center;
     top: 11px;
     /* padding: 0px 4px; */
-    width: 15px;
+    width: 17px;
     height: 18px;
     color: white;
     background: #2b2b2bd6;
