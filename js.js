@@ -30,53 +30,70 @@ let shopItemsData = [{
 const boxes = document.querySelectorAll('.box');
 const btn = document.querySelectorAll(".button");
 const add = document.querySelectorAll(".button-add");
-const selectedItems = [];
+
 const boxshoping = document.querySelector(".box-shoping")
 const shopicon = document.querySelector(".fa-bag-shopping")
 const iconx = document.querySelector(".fa-x");
-const number = document.querySelector(".num")
 const totalp = document.querySelector(".total-span")
 let num = 1;
 let totalPrice = 0;
-
+const number = document.querySelector(".num")
+let selectedItems = []
+    // Load selectedItems from localStorage on page load
 function calculateTotalPrice() {
     totalPrice = selectedItems.reduce((total, item) => total + parseFloat(item.price), 0);
     console.log(totalPrice);
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const storedSelectedItems = localStorage.getItem('selectedItems');
+    if (storedSelectedItems) {
+        selectedItems.push(...JSON.parse(storedSelectedItems));
+        updateBoxshopping();
+    }
+});
+console.log(updateBoxshopping);
+// Update the boxshopping element
+function updateBoxshopping() {
+    document.querySelector(".box-shoppingchild").innerHTML = '';
+    selectedItems.forEach((item) => {
+        const newBox = document.createElement('div');
+        newBox.classList.add('box-node');
+        newBox.setAttribute('data-id', item.id); // Set the ID of the box element
+        newBox.innerHTML = `
+        <div class="img2">
+            <img src="${item.img}" alt="">
+        </div>
+        <div class="parent-node">
+          <h2 class="title2">${item.name}</h2>
+          <p class="desc2">${item.desc}</p>
+          <div class="parent-btn">
+            <span class="desc22">${item.price}</span>
+            <button class="removenode"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>`;
+        document.querySelector(".box-shoppingchild").appendChild(newBox);
+    });
+    number.innerHTML = selectedItems.length;
+    calculateTotalPrice();
+    totalp.textContent = " " + totalPrice + "$";
 }
 
 add.forEach((button, index) => {
     button.addEventListener('click', () => {
         const selectedItem = {
-            id: index,
-            name: boxes[index].querySelector('.title').textContent,
-            desc: boxes[index].querySelector('.desc').textContent,
-            img: boxes[index].querySelector('.img img').src,
-            price: boxes[index].querySelector('.price').textContent,
+            id: shopItemsData[index].id,
+            name: shopItemsData[index].name,
+            desc: shopItemsData[index].desc,
+            img: shopItemsData[index].img,
+            price: shopItemsData[index].price + "$",
         };
 
         // Check if item already exists
         const itemIndex = selectedItems.findIndex(item => item.id === selectedItem.id);
         if (itemIndex === -1) {
             selectedItems.push(selectedItem);
-            // Create new box element and append it to the DOM
-            const newBox = document.createElement('div');
-            newBox.classList.add('box-node');
-            newBox.setAttribute('data-id', selectedItem.id); // Set the ID of the box element
-            newBox.innerHTML = `
-                <div class="img2">
-                    <img src="${selectedItem.img}" alt="">
-                </div>
-                <div class="parent-node">
-                <h2 class="title2">${selectedItem.name}</h2>
-                <p class="desc2">${selectedItem.desc}</p>
-                <div class="parent-btn">
-                <span class="desc22">${selectedItem.price}</span>
-                <button class="removenode"><i class="fa-solid fa-trash"></i></button></div></div>`;
-            boxshoping.appendChild(newBox)
-            number.innerHTML = selectedItems.length
-            calculateTotalPrice()
-            console.log(selectedItems);
-            totalp.textContent = " " + totalPrice + "$"
+            updateBoxshopping();
+            localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
         }
     });
 });
@@ -90,14 +107,14 @@ document.addEventListener('click', e => {
             // Remove the box element from DOM
             selectedItems.splice(itemIndex, 1); // Remove the item from selectedItems
             boxElement.remove();
-            number.innerHTML = selectedItems.length
-            calculateTotalPrice()
-            console.log(totalPrice);
-            console.log(selectedItems);
-            totalp.textContent = " " + totalPrice + "$"
+            number.innerHTML = selectedItems.length;
+            calculateTotalPrice();
+            totalp.textContent = " " + totalPrice + "$";
+            localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
         }
     }
 });
+
 
 
 for (let i = 0; i < boxes.length; i++) {
